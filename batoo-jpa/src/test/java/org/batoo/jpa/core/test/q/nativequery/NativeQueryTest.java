@@ -33,7 +33,6 @@ import org.batoo.jpa.core.test.q.Order2;
 import org.batoo.jpa.core.test.q.Order3;
 import org.batoo.jpa.core.test.q.Order4;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -95,7 +94,6 @@ public class NativeQueryTest extends BaseCoreTest {
 	 * @since $version
 	 */
 	@Test
-	@Ignore
 	public void testDiscriminatorValue() {
 		final Item4 i4 = new Item4("item4", "the item 4.");
 
@@ -129,7 +127,7 @@ public class NativeQueryTest extends BaseCoreTest {
 			final Item4 item = (Item4) row[1];
 			Assert.assertTrue(this.em().contains(item));
 
-			Assert.assertEquals(2, item.getOrders().size());
+			Assert.assertEquals(1, item.getOrders().size());
 
 			Assert.assertEquals(item, order.getItem());
 
